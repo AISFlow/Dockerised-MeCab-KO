@@ -18,6 +18,18 @@ jobs:
       contents: read
       packages: write
     steps:
+      - name: Maximize build space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "/usr/local/share/boost"
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+
+      - name: Check disk space
+        run: |
+          echo "Disk space usage after cleanup:"
+          df -h
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
