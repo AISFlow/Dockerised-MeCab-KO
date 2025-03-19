@@ -45,4 +45,4 @@ RUN tree /opt/mecab
 
 FROM debian:bookworm-slim AS final
 
-COPY --link --from=mecab-ko /opt/mecab /opt/mecab
+COPY --link --chmod=755 --from=mecab-ko /opt/mecab /opt/mecab
