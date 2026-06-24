@@ -1,4 +1,4 @@
-FROM debian:bookworm AS mecab-ko
+FROM debian:bookworm-20260623 AS mecab-ko
 
 # Install dependencies
 RUN apt-get update -y && \
